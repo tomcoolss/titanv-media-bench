@@ -1,0 +1,207 @@
+{
+  "date": "2026-10-22",
+  "hw": "NVIDIA TITAN V 12GB @120W cap, driver 580.178.04, PCIe Gen3 x8",
+  "vision": {
+    "model": "Qwen3-VL-8B-Instruct UD-Q4_K_XL + mmproj-F16",
+    "engine": "llama.cpp (CUDA sm_70, -ngl 99, fa=on, ctx 16K), :8081",
+    "runs": [
+      {
+        "image": "showcase_collage",
+        "iter": 0,
+        "wall_s": 15.52,
+        "prompt_tokens": 4099,
+        "completion_tokens": 256,
+        "decode_tok_s": 16.6
+      },
+      {
+        "image": "showcase_collage",
+        "iter": 1,
+        "wall_s": 5.87,
+        "prompt_tokens": 4099,
+        "completion_tokens": 256,
+        "decode_tok_s": 44.3
+      },
+      {
+        "image": "showcase_collage",
+        "iter": 2,
+        "wall_s": 5.36,
+        "prompt_tokens": 4099,
+        "completion_tokens": 256,
+        "decode_tok_s": 48.7
+      },
+      {
+        "image": "blackboard_math",
+        "iter": 0,
+        "wall_s": 14.77,
+        "prompt_tokens": 4007,
+        "completion_tokens": 256,
+        "decode_tok_s": 17.4
+      },
+      {
+        "image": "blackboard_math",
+        "iter": 1,
+        "wall_s": 4.56,
+        "prompt_tokens": 4007,
+        "completion_tokens": 256,
+        "decode_tok_s": 57.5
+      },
+      {
+        "image": "blackboard_math",
+        "iter": 2,
+        "wall_s": 4.77,
+        "prompt_tokens": 4007,
+        "completion_tokens": 256,
+        "decode_tok_s": 54.8
+      },
+      {
+        "image": "poster_mixed_cjk",
+        "iter": 0,
+        "wall_s": 12.54,
+        "prompt_tokens": 3431,
+        "completion_tokens": 256,
+        "decode_tok_s": 20.6
+      },
+      {
+        "image": "poster_mixed_cjk",
+        "iter": 1,
+        "wall_s": 4.56,
+        "prompt_tokens": 3431,
+        "completion_tokens": 256,
+        "decode_tok_s": 57.3
+      },
+      {
+        "image": "poster_mixed_cjk",
+        "iter": 2,
+        "wall_s": 4.63,
+        "prompt_tokens": 3431,
+        "completion_tokens": 256,
+        "decode_tok_s": 56.5
+      },
+      {
+        "image": "text_only",
+        "iter": 0,
+        "wall_s": 4.11,
+        "prompt_tokens": 30,
+        "completion_tokens": 256,
+        "decode_tok_s": 62.2
+      },
+      {
+        "image": "text_only",
+        "iter": 1,
+        "wall_s": 3.71,
+        "prompt_tokens": 30,
+        "completion_tokens": 256,
+        "decode_tok_s": 69.0
+      },
+      {
+        "image": "text_only",
+        "iter": 2,
+        "wall_s": 3.72,
+        "prompt_tokens": 30,
+        "completion_tokens": 256,
+        "decode_tok_s": 68.8
+      }
+    ]
+  },
+  "asr": {
+    "model": "whisper large-v3-turbo ggml",
+    "engine": "whisper.cpp (CUDA sm_70), :8082",
+    "runs": [
+      {
+        "clip": "jfk",
+        "iter": 0,
+        "audio_s": 11.0,
+        "wall_s": 0.38,
+        "rtf": 0.035,
+        "chars": 110
+      },
+      {
+        "clip": "jfk",
+        "iter": 1,
+        "audio_s": 11.0,
+        "wall_s": 0.31,
+        "rtf": 0.028,
+        "chars": 110
+      },
+      {
+        "clip": "jfk",
+        "iter": 2,
+        "audio_s": 11.0,
+        "wall_s": 0.3,
+        "rtf": 0.027,
+        "chars": 110
+      },
+      {
+        "clip": "mandarin",
+        "iter": 0,
+        "audio_s": 11.1,
+        "wall_s": 0.33,
+        "rtf": 0.03,
+        "chars": 37
+      },
+      {
+        "clip": "mandarin",
+        "iter": 1,
+        "audio_s": 11.1,
+        "wall_s": 0.34,
+        "rtf": 0.031,
+        "chars": 37
+      },
+      {
+        "clip": "mandarin",
+        "iter": 2,
+        "audio_s": 11.1,
+        "wall_s": 0.32,
+        "rtf": 0.029,
+        "chars": 37
+      },
+      {
+        "clip": "cantonese",
+        "iter": 0,
+        "audio_s": 9.8,
+        "wall_s": 0.32,
+        "rtf": 0.032,
+        "chars": 35
+      },
+      {
+        "clip": "cantonese",
+        "iter": 1,
+        "audio_s": 9.8,
+        "wall_s": 0.32,
+        "rtf": 0.033,
+        "chars": 35
+      },
+      {
+        "clip": "cantonese",
+        "iter": 2,
+        "audio_s": 9.8,
+        "wall_s": 0.31,
+        "rtf": 0.032,
+        "chars": 35
+      }
+    ]
+  },
+  "img2img": {
+    "model": "Z-Image-Turbo fp32 sequential-offload (cudnn off)",
+    "engine": "diffusers 0.36 / torch 2.5.1+cu121, CUDA_VISIBLE_DEVICES=2",
+    "note": "vision+whisper services stopped during run (time-share); engine auto-resumes",
+    "runs": [
+      {
+        "size": "992x992",
+        "strength": 0.4,
+        "steps": 9,
+        "dit_forwards": 4,
+        "total_s": 80,
+        "load_s": 16,
+        "sample_s": 63,
+        "source": "edit_latest.log 2026-10-22 21:41"
+      }
+    ]
+  },
+  "medians": {
+    "vision_decode_tok_s": 48.7,
+    "text_decode_tok_s": 68.8,
+    "vision_wall_s_med": 5.36,
+    "asr_rtf_med": 0.031
+  }
+}
